@@ -4,12 +4,16 @@
     <div class="col-xs-12 container title">
 
         <!--page heading-->
-        <h2 class="page-heading">Calculator List</h2>
+        <h2 class="page-heading">Calculator and Information Links</h2>
     </div>
 
-    <!--calculator links and explanation of what they do-->
+    <!--topic links and explanation of what they do-->
     <div class="col-xs-12 container calculator-description">
         <p>Link to <a class="hover" href="{% url 'plasterboard' %}"><b>Board Breakdown</b></a></p>
+        <p>Link to <a class="hover" href="{% url 'insulation' %}"><b>Insulation Information</b></a></p>
+        <p>Link to <a class="hover" href="{% url 'ceilings' %}"><b>Ceiling Information</b></a></p>
+        <p>Link to <a class="hover" href="{% url 'margin' %}"><b>Margin & Discount Calculator</b></a></p>
+        <p>Link to <a class="hover" href="{% url 'alternatives' %}"><b>Product Alternatives</b></a></p>
     </div>
 </div>
 {% endblock %}

@@ -2,14 +2,6 @@ html {
     height: 100%;
 }
 
-body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato';
-}
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -63,3 +55,34 @@ body {
         padding-top: 164px;
     }
 }
+
+/* navbar */
+.nav-link {
+    color: #f0f8ff !important;
+}
+
+.nav-link:hover {
+    color: #ffff;
+    font-weight: 800 !important;
+}
+
+.navbar-brand {
+    font-size: 175%;
+}
+
+/* footer */
+.footer {
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 10px !important;
+    color: white;
+    background-color: #007bff;
+}
+
+.footer-design {
+    background-color: #0059ff;
+}
+
+
+
+

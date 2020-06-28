@@ -33,7 +33,7 @@
     <title>Insulation Guru</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,20 +41,17 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'plasterboard' %}">Plasterboard</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'plasterboard' %}">Insulation</a>
+                    <a class="nav-link" href="{% url 'list' %}">Topics</a>
                 </li>
                 {% if request.user.is_authenticated %}
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/">Profile</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                 {% else %}
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     <li class="nav-item">
@@ -64,7 +61,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
@@ -74,10 +71,34 @@
 
     {% block page_header %}
     {% endblock %}
-
+    <div class="container">
     {% block content %}
     {% endblock %}
-
+    </div>
+    <!--footer-->
+    <footer>
+        <div class="footer row justify-content-sm-center">
+            <div class="col-12 col-md-5">
+                <h4 class="footer-heading">About Us</h4>
+                <p>
+                    Miller Merchant was created in 2019 after we were fed up having to shop on book stores that
+                    felt so generic and impersonal. Here at Miller Merchant we are trying to build a community along 
+                    side running our store by having book of the month competitions and getting exclusive interviews 
+                    from some of the top authors in the world.
+                </p>
+            </div>
+            <div class="col-12 col-md-5">
+                <h4 class="footer-heading">Site Navigation</h4>
+                <p><a class="footer-link" href="/">Home</a></p>
+                <p><a class="footer-link" href="{% url 'plasterboard' %}">Plasterboard</a></p>
+                <p><a class="footer-link" href="{% url 'plasterboard' %}">Insulation</a></p>
+                <p><a class ="footer-link" href="mailto:info@insulationguru.com">Contact Us</a></p>
+            </div>
+            <div class="footer-design col-12 text-right">
+                <p>by DandelionDesigns</P>
+            </div>
+        </div>
+    </footer>
     {% block postloadjs %}
     {% endblock %}  
   </body>
