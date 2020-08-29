@@ -49,20 +49,20 @@
     <div class="col-xs-12 container discount">
         Regular Price : <input type="text" name="price" value="">
         <br />
-        Discount Percentage : <input type="text" name="percentage" onkeyup="calculatePrice()">
+        Discount Percentage : <input type="text" name="percentage" onkeyup="calculateDiscount()">
         <br />
-        Discounted Price : <input type="text" name="discount" onkeyup="calculatePerc()">
+        Discounted Price : <input type="text" name="discount" onkeyup="calculateDiscount()">
     </div>
 
     
-    <!--plasterboard m2 to sheet size calculator
+    <!--plasterboard m2 to sheet size calculator-->
     <div class="col-xs-12 container discount">
         Cost Price : <input type="text" name="cost" value="">
         <br />
         Margin % looking to make : <input type="text" name="margin" onkeyup="calculateMargin()">
         <br />
-        Selling Price : <input type="text" name="sellingprice" onkeyup="calculateMarginPerc()">
+        Selling Price : <input type="text" name="sellingprice" onkeyup="calculateMargin()">
     </div>
--->
+
 </div>
 {% endblock %}

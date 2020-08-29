@@ -54,14 +54,14 @@ $(function() {
 }); 
 
 // Discount calculator 
-function calculatePrice() {
+function calculateDiscount() {
     var percentage = $('input[name=percentage]').val(),
         price = $('input[name=price]').val(),
         calcPrice = price - ( (price/100) * percentage ),
         discountPrice = calcPrice.toFixed(2);
     $('input[name=\'discount\']').val(discountPrice);
 }
-
+/*
 function calculatePerc() {
     var discountPrice = $('input[name=discount]').val(),    
         price = $('input[name=price]').val(),
@@ -69,17 +69,20 @@ function calculatePerc() {
         discountPerc = calcPerc.toFixed();
     $('input[name=percentage]').val(discountPerc);
 }
+*/
 
-/*
 // Margin addition calculator
 
 function calculateMargin() {
     var margin = $('input[name=margin]').val(),
         cost = $('input[name=cost]').val(),
-        calcMargin = cost - ( (cost/100) / margin),
+        marginPerc = margin / 100,
+        calcMargin = (cost) / (1 - (marginPerc)),
         sellingPrice = calcMargin.toFixed(2);
     $('input[name=\'sellingprice\']').val(sellingPrice);
 }
+
+/*
 function calculateMarginPerc() {
     var sellingPrice = $('input[name=sellingprice]').val(),    
         cost = $('input[name=cost]').val(),
