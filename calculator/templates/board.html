@@ -8,15 +8,61 @@
         <h2 class="page-heading">Plasterboard Types</h2>
     </div>
 
-    <!--plasterboard information-->
-    <div class="col-xs-12 container plasterboard-description">
-        <form method="POST">
-            <div class="form-group">
-                {% csrf_token %} {{ comment_form | as_bootstrap }}
-                <button type="submit" class="btn btn-default custom-button">Calculate</button>
-            </div>
-        </form>
-        {{ boardprice }}
+    <!--plasterboard m2 to sheet size calculator-->
+    <div class="col-xs-12 container board-m2-to-sheet-size">
+        <label>How many m2 required:</label><input name="m2tosheetsize" id="m2tosheetsize" type="text" />
+        <br />
+        600x600: <span id="m2sizeresult1"></span> sheets 
+        <br />
+        1200x450: <span id="m2sizeresult2"></span> sheets
+        <br />
+        1200x600: <span id="m2sizeresult3"></span> sheets
+        <br />
+        1800x900: <span id="m2sizeresult4"></span> sheets
+        <br />
+        2400x1200: <span id="m2sizeresult5"></span> sheets
+        <br />
+        2700x1200: <span id="m2sizeresult6"></span> sheets
+        <br />
+        3000x1200: <span id="m2sizeresult7"></span> sheets
     </div>
+
+    <!--plasterboard m2 to sheet size calculator-->
+    <div class="col-xs-12 container board-m2-to-sheet-cost">
+        <label>What is your m2 cost: £</label><input name="m2tosheetcost" id="m2tosheetcost" type="text" />
+        <br />
+        600x600: <span id="m2costresult1"></span> per sheet 
+        <br />
+        1200x450: <span id="m2costresult2"></span> per sheet 
+        <br />
+        1200x600: <span id="m2costresult3"></span> per sheet 
+        <br />
+        1800x900: <span id="m2costresult4"></span> per sheet 
+        <br />
+        2400x1200: <span id="m2costresult5"></span> per sheet 
+        <br />
+        2700x1200: <span id="m2costresult6"></span> per sheet 
+        <br />
+        3000x1200: <span id="m2costresult7"></span> per sheet 
+    </div>
+
+    <div class="col-xs-12 container discount">
+        Regular Price : <input type="text" name="price" value="">
+        <br />
+        Discount Percentage : <input type="text" name="percentage" onkeyup="calculatePrice()">
+        <br />
+        Discounted Price : <input type="text" name="discount" onkeyup="calculatePerc()">
+    </div>
+
+    
+    <!--plasterboard m2 to sheet size calculator
+    <div class="col-xs-12 container discount">
+        Cost Price : <input type="text" name="cost" value="">
+        <br />
+        Margin % looking to make : <input type="text" name="margin" onkeyup="calculateMargin()">
+        <br />
+        Selling Price : <input type="text" name="sellingprice" onkeyup="calculateMarginPerc()">
+    </div>
+-->
 </div>
 {% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import PlasterboardPrice, PlasterboardCoverage
 from .forms import PlasterboardPriceInput
 
+
 # Create your views here.
 def calc_list(request):
     """ A view to return the calculator list """
@@ -10,12 +11,7 @@ def calc_list(request):
 
 def board_breakdown(request):
     """ Displays board information """
-    comment_form = PlasterboardPriceInput(request.POST or None)
-    plasterboardinput = comment_form.save(commit=False)
-    boardprice = PlasterboardPrice.boardm2cost * PlasterboardPrice.boardsize
-    boardprice.save()
-    return render(request, 'board.html', {"comment_form": comment_form})
-
+    return render(request, 'board.html')
 
 def insulation(request):
     """ Displays insulation information """
